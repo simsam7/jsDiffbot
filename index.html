@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Diffbot API</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            html {
+                background:#daede2;
+                padding:3%;
+            }
+            body {
+                background:#77c4d3;
+                font-family:"Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+                padding: 1%;
+                color: #fff;
+            }
+            a {
+                border-bottom:1px solid rgba(0, 0, 0, 0.2);
+                color:#333;
+                text-decoration:none;
+            }
+            a:hover {
+                border-color:#ea2e49;
+            }
+            h1 {
+                font-weight:normal;
+            }
+            h1 {
+                background:#ea2e49;
+                color:#fff;
+                display:inline-block;
+                margin-bottom:1em;
+                padding:0.5em 1em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Diffbot JavaScript API Example</h1>
+        <p>These are some simple examples of calls to the
+            <a href="http://Diffbot.com" />Diffbot.com</a>&nbsp;API.</p>
+        <p>Head over there, get yourself a developer token and have fun!</p>
+        <p>Take a look at the source code of this page for more examples.</p>
+        <p>By the time you get here, the first example will load.</p>
+        <script src="jsDiffbot.js"></script>
+        <!-- Just a small, simple structured Ajax library geared towards specifically fetching Diffbot results -->
+        <script>        
+            window.setTimeout(diffbot, 5000);
+
+            function diffbot() {
+                //            //  Product example
+                //            jsDiffbot.get('a7122e73c5c2c76118f4234c85ff5f2e', 'product', 'http://www.overstock.com/Home-Garden/iRobot-650-Roomba-Vacuuming-Robot/7886009/product.html', 'products(offerPrice,sku)', function(data) {
+                //                document.write(JSON.stringify(data));
+                //            });
+
+
+                // Article example
+                jsDiffbot.get('a7122e73c5c2c76118f4234c85ff5f2e', 'article', 'http://www.wired.co.uk/news/archive/2012-06/01/diffbot', 'meta,querystring,images(*)', function(data) {
+                    document.write(JSON.stringify(data));
+                });
+
+
+                //            // Frontpage example
+                //            jsDiffbot.get('a7122e73c5c2c76118f4234c85ff5f2e', 'frontpage', 'http://www.huffingtonpost.com/', 'format=json', function(data) {
+                //                document.write(JSON.stringify(data));
+                //            });
+
+
+                //            //Image example
+                //            jsDiffbot.get('a7122e73c5c2c76118f4234c85ff5f2e', 'image', 'http://www.diffbot.com/', 'images(mime,pixelWidth),links', function(data) {
+                //                document.write(JSON.stringify(data));
+                //            });
+
+                //            You would of course not normally call JSON.stringify here, but it helps to see what you're going to get and you can use a site like: 
+                //            http://www.jsoneditoronline.org/ to see exactly what's going on. Have fun!
+            }
+        </script>
+    </body>
+
+</html>
